@@ -11,13 +11,14 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
-    
+      - name: requirements
+        run: |
+          pip3 install -r requirements.txt
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
           python-version: 3.9.1
-      - name: requirements
-        run: |
+      
       - name: Set timezone
         run: |
           cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
